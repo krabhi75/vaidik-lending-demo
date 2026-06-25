@@ -1,0 +1,513 @@
+================================================================================
+VAIDIK MOBILE APP — GOOGLE STITCH COMPLETE PROMPTS (22 SCREENS)
+Copy each block below directly into Google Stitch. Each prompt is self-contained.
+Frame: 390x844 mobile | Style: KreditBee / Moneyview inspired
+================================================================================
+
+
+--------------------------------------------------------------------------------
+SCREEN 1 — WELCOME / SPLASH
+--------------------------------------------------------------------------------
+
+Design a mobile fintech lending app welcome screen for the Indian market, 390x844 portrait.
+
+BRAND: Vaidik Mobile App
+STYLE: Clean, modern, KreditBee-inspired. Premium but accessible.
+COLORS: Primary dark #1A1A2E, brand amber CTA #F5A623 gradient to #F7B731, success green #00B894, background #F7F8FA, white cards rounded 16px, muted text #6B7280.
+TYPOGRAPHY: Bold sans-serif. Large rupee amounts in heavy weight.
+BUTTONS: Full-width amber gradient pill buttons. BADGES: small rounded pills.
+TRUST: RBI registered NBFC partner, 4.5 star rating. No stock photos. Flat icons only.
+
+CONTENT:
+- Top: Logo VAIDIK in dark navy bold letter-spacing
+- Below: 4.5 star • 10M+ downloads in gray
+- Top-right: small Hindi language toggle chip
+- Hero: Large gold circle with rupee symbol
+- Headline: Get Personal Loan
+- Subheadline: up to 5 Lakhs in large amber gold
+- Tagline: Paperless • 10 min disbursal • No collateral
+- Trust badges: RBI Registered | 256-bit Secure | ISO Certified
+- How it works — 3 steps: 1 Register with mobile OTP 2 KYC + Income AA verification 3 KFS sign eNACH instant money
+- Primary CTA: Continue with Mobile Number (amber gradient full width)
+- Secondary: Skip to Demo Dashboard (light amber)
+- Link: Quick Demo States in green
+- Footer: Designed by Abhishek Kumar
+
+MOOD: Trustworthy, fast, aspirational like KreditBee welcome.
+
+
+--------------------------------------------------------------------------------
+SCREEN 2 — LOGIN / OTP
+--------------------------------------------------------------------------------
+
+Design a mobile OTP login screen for Indian fintech app Vaidik Mobile App, 390x844 portrait.
+
+STYLE: KreditBee-inspired. Amber CTA #F5A623, navy text #1A1A2E, white cards, green success #00B894, background #F7F8FA. Bold sans-serif. Full-width amber gradient buttons. No stock photos.
+
+CONTENT:
+- Back arrow top left
+- Title: Enter Mobile Number
+- Subtitle: We will send a 6-digit OTP to verify your number
+- Phone input: +91 | 9876543210 in white card with border
+- Green checkmark: Valid Indian mobile number
+- 6 OTP boxes filled: 4 8 2 9 1 0
+- Resend OTP in 00:28
+- Checkbox checked: I agree to credit bureau pull and RBI lending terms
+- Button: Verify OTP (amber full width)
+- Footer: By continuing you consent to CKYC CIBIL soft pull per RBI norms
+
+Clean minimal form. No header bar.
+
+
+--------------------------------------------------------------------------------
+SCREEN 3 — AADHAAR KYC (STEP 1/5)
+--------------------------------------------------------------------------------
+
+Design Aadhaar eKYC screen step 1 of 5 for Vaidik Mobile App Indian lending app, 390x844 mobile.
+
+STYLE: KreditBee-inspired. Amber #F5A623 CTA, navy #1A1A2E, white cards, green #00B894, gray background. Progress bar amber fill.
+
+HEADER: Back arrow + Verify Identity
+PROGRESS: 20% — KYC Progress Step 1 of 5
+BADGE: UIDAI Aadhaar OTP
+
+CONTENT:
+- Card Enter Aadhaar Number
+- Input masked XXXX XXXX 4521
+- OTP sent to Aadhaar-linked mobile
+- Callout: Powered by UIDAI Licensed KUA
+- Simple Aadhaar card icon illustration
+- Button Send Aadhaar OTP amber full width
+- Step dots bottom: filled empty empty empty empty
+
+
+--------------------------------------------------------------------------------
+SCREEN 4 — CKYC (STEP 2/5)
+--------------------------------------------------------------------------------
+
+Design CKYC Central KYC fetch screen step 2 of 5 for Vaidik Mobile App, 390x844 Indian fintech mobile UI.
+
+STYLE: KreditBee-inspired. Amber CTA, navy text, white cards, green success badges, 16px rounded cards.
+
+HEADER: CKYC
+PROGRESS: 40% KYC Progress Step 2 of 5
+BADGE: CERSAI CKYC Registry
+
+CONTENT:
+- Loading: Fetching from CKYC registry
+- Success card green checkmark:
+  Name Abhishek Kumar read-only
+  DOB 15/08/1995
+  Address Patna Bihar 800001
+  CKYC ID masked
+- Callout: CKYC Hit — KYC reused from central registry
+- Button Confirm and Continue amber
+
+Pre-filled gray read-only fields.
+
+
+--------------------------------------------------------------------------------
+SCREEN 5 — PAN + CIBIL SCORE (STEP 3/5)
+--------------------------------------------------------------------------------
+
+Design PAN verification and CIBIL credit score screen step 3 of 5 for Vaidik Mobile App, 390x844 mobile India fintech.
+
+STYLE: Amber CTA #F5A623, navy #1A1A2E, white cards, green #00B894 for score. KreditBee style.
+
+HEADER: PAN and Credit Score
+PROGRESS: 60% Step 3 of 5
+BADGES: NSDL PAN and CIBIL Soft Pull
+
+CONTENT:
+- PAN input ABCPK1234D with green verify check
+- Credit score highlight card:
+  Large 742 in green
+  CIBIL Score label
+  Good — Eligible for instant approval
+  Mini gauge meter green zone
+- 2 active accounts, 0 DPD, Last pull today
+- Soft pull does not affect score
+- Button Continue to Video KYC
+
+
+--------------------------------------------------------------------------------
+SCREEN 6 — VIDEO KYC (STEP 4/5)
+--------------------------------------------------------------------------------
+
+Design Video KYC V-CIP liveness screen step 4 of 5 for Vaidik Mobile App, 390x844 Indian lending mobile UI.
+
+STYLE: KreditBee-inspired. Amber buttons, navy text, dark camera frame, green success.
+
+HEADER: Video KYC
+PROGRESS: 80% Step 4 of 5
+BADGE: V-CIP In Progress
+
+CONTENT (capture state):
+- Dark oval face guide frame center selfie UI
+- Face silhouette in oval
+- Position face in the oval
+- Green: Liveness check Blink detected
+- Checklist: PAN Aadhaar handy, good lighting, 2 security questions
+- Button Submit Verification amber
+
+OR completed state:
+- Large green checkmark KYC Verified
+- All 5 checks complete
+- Button Apply for Personal Loan
+
+
+--------------------------------------------------------------------------------
+SCREEN 7 — INCOME VERIFICATION (ACCOUNT AGGREGATOR)
+--------------------------------------------------------------------------------
+
+Design income verification via RBI Account Aggregator screen for Vaidik Mobile App, 390x844 mobile like Moneyview Navi.
+
+STYLE: Amber CTA, navy text, white cards, green success, KreditBee fintech India.
+
+HEADER: Income Verification
+SUBTITLE: Account Aggregator fetches salary credits with your consent
+BADGE: RBI Account Aggregator
+PROGRESS: Onboarding Income Check 90%
+
+CONTENT (success state):
+- Chips Salaried selected and Self Employed
+- Success card:
+  Income Verified checkmark
+  Type Salaried
+  Employer Infosys Ltd
+  Monthly Income 85000 rupees
+  AA Consent ID
+- AA steps: Consent captured, OneMoney redirect, Parsing salary credits, Income score 82/100
+- Button Apply for Personal Loan amber full width
+
+
+--------------------------------------------------------------------------------
+SCREEN 8 — LOAN APPLICATION (AMOUNT & TENURE)
+--------------------------------------------------------------------------------
+
+Design personal loan application amount and tenure selector for Vaidik Mobile App, 390x844 Indian fintech mobile.
+
+STYLE: KreditBee-inspired. Amber slider and chips, navy summary card, white input cards.
+
+HEADER: Get Personal Loan
+STEP TRACKER: Amount done | Review | Sign | Money
+
+CONTENT:
+- Card Pre-approved limit 5 lakh rupees large
+- Card I need: amount 1 lakh 50 thousand large, horizontal amber slider 10K to 5L
+- Card For: tenure chips 6mo 12mo selected 18mo 24mo 36mo
+- Summary card dark navy background white text:
+  Monthly EMI 13542
+  Interest 14.5% p.a.
+  Processing fee 999 plus GST
+  Total payable 162504 in amber
+- Disclosure KFS before signing 3-day cooling-off RBI
+- Button Check Offer amber
+
+
+--------------------------------------------------------------------------------
+SCREEN 9 — CREDIT DECISION APPROVED
+--------------------------------------------------------------------------------
+
+Design loan credit decision approved screen for Vaidik Mobile App, 390x844 Indian fintech mobile UI.
+
+STYLE: KreditBee-inspired. Green approved badge, amber CTA, navy text, white highlight card.
+
+HEADER: Credit Decision
+SUBTITLE: Automated underwriting bureau score cash flow fraud checks
+
+CONTENT (approved state):
+- Green badge Approved
+- Highlight card:
+  Congratulations
+  Large 1 lakh 50 thousand rupees
+  approved at 14.5% p.a.
+  Loan ID VAIDIK-PL-2026-88421
+  EMI 13542 per month Tenure 12 months
+- Button Review Key Fact Statement amber full width
+
+Also show processing variant: spinner Running credit decision engine Bureau Fraud AML Policy rules.
+
+
+--------------------------------------------------------------------------------
+SCREEN 9B — CREDIT DECISION DECLINED (OPTIONAL)
+--------------------------------------------------------------------------------
+
+Design loan declined screen for Vaidik Mobile App, 390x844 Indian fintech.
+
+STYLE: Amber warning badge, white card, navy text, outline button.
+
+HEADER: Not Approved
+CONTENT:
+- Badge Not Approved amber
+- Application Declined title red
+- FOIR exceeds policy limit
+- Bureau Score 742
+- Re-apply after 30 days message
+- Button Back to Home outline
+
+
+--------------------------------------------------------------------------------
+SCREEN 10 — KEY FACT STATEMENT + ESIGN
+--------------------------------------------------------------------------------
+
+Design RBI Key Fact Statement KFS loan agreement screen for Vaidik Mobile App, 390x844 India fintech mobile.
+
+STYLE: Amber border highlight card, navy text, white cards, green eSign success, KreditBee style.
+
+HEADER: Key Fact Statement
+BADGE: KFS Sanction Letter
+
+CONTENT:
+- Borrower card: Abhishek Kumar, PAN, Lender Vaidik NBFC Partner Ltd, LSP Vaidik Mobile App
+- Loan terms amber border card:
+  Sanctioned 1.5L Rate 14.5% APR 15.7% Tenure 12mo EMI 13542
+  Processing fee total interest total payable
+- Rights bullets: 3-day cooling-off, disbursement to borrower only, grievance officer
+- Checkbox checked I have read KFS and accept terms
+- Button Sign with Aadhaar eSign amber
+
+Signed state: Aadhaar eSign Complete Doc ID button Link Bank Account
+
+
+--------------------------------------------------------------------------------
+SCREEN 11 — BANK ACCOUNT LINKING
+--------------------------------------------------------------------------------
+
+Design bank account linking penny-drop screen for Vaidik Mobile App, 390x844 Indian lending app.
+
+STYLE: Amber selected bank border, white list cards, green verified badge, KreditBee fintech.
+
+HEADER: Link Bank Account
+BADGE: Account Aggregator plus Penny Drop
+
+CONTENT (success):
+- Select salary primary account
+- Bank list radio: HDFC selected amber border, ICICI, SBI, Axis with bank icons
+- Success card:
+  Account Verified checkmark
+  HDFC Bank masked 4521
+  Holder Abhishek Kumar
+- Button Setup eNACH Mandate amber
+
+
+--------------------------------------------------------------------------------
+SCREEN 12 — ENACH MANDATE SETUP
+--------------------------------------------------------------------------------
+
+Design NPCI eNACH auto-debit mandate screen for Vaidik Mobile App, 390x844 India fintech mobile.
+
+STYLE: Amber CTA, white cards, green success UMRN, navy text, KreditBee style.
+
+HEADER: Setup AutoPay
+BADGE: NPCI NACH
+
+CONTENT (success state):
+- Why eNACH bullets: auto-debit EMIs, 92% success rate, RBI recommended, EMI 13542/month
+- Bank HDFC masked 4521 Abhishek Kumar
+- Mandate Max 13542 Monthly
+- Success: Mandate Registered UMRN HDFC0001234567890
+- Button Proceed to Disbursement amber
+
+
+--------------------------------------------------------------------------------
+SCREEN 13 — DISBURSEMENT SUCCESS
+--------------------------------------------------------------------------------
+
+Design loan IMPS disbursement success screen for Vaidik Mobile App, 390x844 Indian fintech mobile.
+
+STYLE: Green Disbursed badge, amber amount, white cards, KreditBee celebratory but clean.
+
+HEADER: Money Transferred
+
+CONTENT:
+- Green badge Disbursed
+- Money emoji illustration
+- Money on the way headline
+- Large 1 lakh 50 thousand rupees
+- UTR IMPS26061788421001
+- Expected in account within 30 seconds green
+- KFS card: 3-day cooling-off period email sent
+- Button Go to Dashboard amber full width
+
+
+--------------------------------------------------------------------------------
+SCREEN 14 — HOME DASHBOARD (ACTIVE LOAN)
+--------------------------------------------------------------------------------
+
+Design home dashboard active loan with PO metrics for Vaidik Mobile App, 390x844 India fintech with bottom tab bar.
+
+STYLE: Amber gradient hero card, navy text, white metric cards, green badges, KreditBee home screen.
+
+APP BAR: Vaidik Mobile App + Designed by Abhishek Kumar left, bell and help icons right
+
+CONTENT:
+- Amber gradient card Outstanding Loan 1.5 lakh rupees, EMI 13542 Due 17 Jul 2026, dark Pay EMI Now button
+- 4 icons row: Get Loan Pay EMI History BNPL
+- Product Metrics PO View 2x2 grid:
+  KYC to First Loan 68% plus 4.2%
+  D7 Repayment 54% plus 2.1%
+  M3 Repeat Borrow 31% plus 1.8%
+  NACH Success 92% plus 0.6%
+- Step tracker KYC Income Apply Money all done
+- Upcoming EMI card AutoPay ON green badge
+- BNPL promo Shop Now Pay Later 0% 15 days
+
+TAB BAR: Home active amber | My Loans | BNPL | Pay | Account
+
+
+--------------------------------------------------------------------------------
+SCREEN 15 — HOME DASHBOARD (PRE-APPROVED)
+--------------------------------------------------------------------------------
+
+Design home dashboard pre-approved no loan yet for Vaidik Mobile App, 390x844 with tab bar.
+
+STYLE: Same as active home. Amber hero card KreditBee style.
+
+HERO CARD:
+- You are Pre-approved for
+- 5 lakh rupees large
+- Personal Loan 10 min disbursal
+- Button Apply Now dark on amber
+
+Partial step tracker KYC done Income pending. Services row metrics BNPL promo. Tab bar Home active.
+
+
+--------------------------------------------------------------------------------
+SCREEN 16 — MY LOANS / EMI SCHEDULE
+--------------------------------------------------------------------------------
+
+Design my loans EMI schedule screen for Vaidik Mobile App, 390x844 India fintech tab bar My Loans active.
+
+STYLE: White EMI list cards, amber Due badge, green Active, navy amounts, KreditBee loans tab.
+
+HEADER: My Loans — Loan details EMI schedule billing history
+
+CONTENT:
+- Highlight card VAIDIK-PL-2026-88421, 1.5L outstanding, 14.5% EMI 13542, Active green badge
+- Foreclosure card: Outstanding 1.5L Fee 2% 3000 Total 1.53L
+- EMI list:
+  EMI 1 Jul 17 2026 13542 Due amber badge principal interest breakdown
+  EMI 2 Aug 17 2026 13542 Upcoming gray
+  EMI 3 Sep 17 2026 13542 Upcoming
+- KFS snippet card
+- Outline button Prepay Foreclose Loan
+
+
+--------------------------------------------------------------------------------
+SCREEN 17 — PAY EMI / UPI REPAYMENT
+--------------------------------------------------------------------------------
+
+Design UPI EMI repayment screen for Vaidik Mobile App, 390x844 India fintech Pay tab active.
+
+STYLE: Amber UPI app selection border, white cards, green payment success, KreditBee pay screen.
+
+HEADER: Repay EMI
+
+CONTENT:
+- Highlight EMI Amount Due 13542 large
+- Loan VAIDIK-PL-2026-88421
+- Tabs UPI selected and eNACH
+- 2x2 UPI grid: Google Pay selected amber, PhonePe Paytm BHIM
+- Success card Payment Successful UPI Ref VAIDIKUPI
+- Payment history EMI 1 Paid 13542 Google Pay
+- Footer Razorpay Cashfree PCI-DSS
+- Button Pay via UPI amber
+
+
+--------------------------------------------------------------------------------
+SCREEN 18 — BNPL SHOP NOW PAY LATER
+--------------------------------------------------------------------------------
+
+Design BNPL shop now pay later merchant screen for Vaidik Mobile App, 390x844 India fintech BNPL tab active.
+
+STYLE: Amber selected merchant, white cards, green Active badge, KreditBee LazyPay style.
+
+HEADER: Shop Now Pay Later — 0% interest 15 days partner merchants
+
+CONTENT:
+- BNPL Credit Line 50000 rupees, 3 interest-free EMIs
+- Merchants list cards: Flipkart Amazon Swiggy MakeMyTrip with limits
+- Flipkart selected amber border Active badge
+- Checkout simulation: Order 12999, 3x EMI 4333 per month 0% interest
+- Button Activate BNPL at Flipkart amber
+
+
+--------------------------------------------------------------------------------
+SCREEN 19 — PROFILE / ACCOUNT
+--------------------------------------------------------------------------------
+
+Design user profile account screen for Vaidik Mobile App, 390x844 India fintech Account tab active.
+
+STYLE: White list cards, green Verified badges, navy name, KreditBee profile.
+
+HEADER: Profile
+
+CONTENT:
+- User card Abhishek Kumar, phone 9876543210, email, Fully Verified green
+- KYC Status list all Verified: Aadhaar CKYC PAN Video Bureau
+- Integrations: UIDAI CERSAI CIBIL AA HDFC NACH Razorpay
+- Income Salaried Infosys 85000
+- Toggles Language English PO Metrics ON
+- Link RBI Compliance and Disclosures
+- Outline Reset Demo button
+- Footer Designed by Abhishek Kumar Support 1800-VAIDIK-HELP
+
+
+--------------------------------------------------------------------------------
+SCREEN 20 — NOTIFICATIONS
+--------------------------------------------------------------------------------
+
+Design in-app notifications screen for Vaidik Mobile App, 390x844 India fintech. Back arrow no tab bar.
+
+STYLE: White notification cards, amber unread border, small badges, clean list.
+
+HEADER: Notifications
+
+CONTENT:
+- Unread card amber border: EMI due in 3 days 13542 due Jul 17 2h ago EMI badge
+- Loan disbursed 1.5L credited 1d ago Alert badge
+- Pre-approved limit increased 5L 3d ago Offer badge
+
+
+--------------------------------------------------------------------------------
+SCREEN 21 — HELP & SUPPORT
+--------------------------------------------------------------------------------
+
+Design help support FAQ screen for Vaidik Mobile App, 390x844 India fintech. Back arrow no tab bar.
+
+STYLE: Highlight green contact card, white FAQ cards, KreditBee support style.
+
+HEADER: Help and Support
+
+CONTENT:
+- Card Need help Grievance Officer Mon-Sat 9-6
+- grievance@vaidikedu.com green link
+- 1800-VAIDIK-HELP
+- FAQ cards: disbursement time, cooling-off, prepay loan, who is lender
+- RBI Ombudsman cms.rbi.org.in link card
+
+
+--------------------------------------------------------------------------------
+SCREEN 22 — RBI COMPLIANCE
+--------------------------------------------------------------------------------
+
+Design RBI regulatory compliance disclosures screen for Vaidik Mobile App, 390x844 India fintech.
+
+STYLE: Professional white expandable cards, navy headers, trust seal icons row, legal readable.
+
+HEADER: Regulatory Info
+
+CONTENT:
+- Card RBI Digital Lending Guidelines 2022 with 5 bullets KFS cooling-off LSP RE
+- Card KYC AML CKYC Aadhaar Video KYC PAN AML
+- Card Payment UPI eNACH APR disclosure Fair Practices
+- Card Data Privacy DPDP 2023 consent encryption
+- Grievance officer footer
+- Trust seals row RBI NPCI CERSAI PCI-DSS
+
+
+================================================================================
+END OF PROMPTS — 22 screens for Vaidik Mobile App
+File: google-stitch-complete-prompts.txt
+================================================================================
