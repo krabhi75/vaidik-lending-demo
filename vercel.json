@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npx expo export --platform web",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/demo/:preset",
+      "destination": "/demo/[preset]"
+    }
+  ]
+}

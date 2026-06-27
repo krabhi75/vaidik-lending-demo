@@ -76,6 +76,21 @@ npm run android    # Android emulator / device
 npm run ios        # iOS simulator (macOS only)
 ```
 
+### Deploy to Vercel (web demo for interviews)
+
+This app exports as a static web build. Vercel is configured via `vercel.json`.
+
+1. Push the repo to GitHub.
+2. In [Vercel](https://vercel.com), import the repository.
+3. Leave the default settings — Vercel reads `buildCommand` and `outputDirectory` from `vercel.json`.
+4. Deploy. The live URL will serve the mobile web demo.
+
+Local production build check:
+
+```bash
+npm run build      # outputs to dist/
+```
+
 ---
 
 ## Demo flow (end-to-end)
