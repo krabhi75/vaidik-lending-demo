@@ -25,6 +25,7 @@ export const LievCopy = {
   tagline: "India's Fastest Personal Loan App",
   nbfc: 'Vaidik Eduservices • RBI-registered NBFC partner',
   support: '1800-VAIDIK-HELP',
+  grievanceEmail: 'grievance@vaidik.in',
   playStore: '4.5★ • 10M+ downloads',
 };
 

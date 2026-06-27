@@ -98,10 +98,10 @@ export default function ApprovalScreen() {
             <LievCard>
               <Text style={styles.declineTitle}>Application Declined</Text>
               <Text style={styles.declineSub}>
-                Credit policy did not meet minimum bureau score threshold. You can re-apply after 30
-                days or improve score via timely repayments.
+                Your fixed obligations exceed our FOIR policy limit despite a good bureau score
+                (742). You can re-apply after 30 days or improve eligibility via timely repayments.
               </Text>
-              <Row label="Bureau Score" value="742" />
+              <Row label="Bureau Score" value="742 (Good)" />
               <Row label="Reason" value="FOIR exceeds policy limit" />
             </LievCard>
           </>

@@ -1,26 +1,42 @@
 import { router } from 'expo-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { LievButton } from '@/components/liev/Button';
 import { LievScreen } from '@/components/liev/Screen';
 import { LievTheme } from '@/constants/theme';
 import { useDemo } from '@/context/DemoContext';
+import { t } from '@/lib/i18n';
 
 export default function LoginScreen() {
-  const { login } = useDemo();
+  const { login, lang } = useDemo();
   const [phone, setPhone] = useState('9876543210');
   const [otp, setOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [consent, setConsent] = useState(false);
+  const [resendIn, setResendIn] = useState(0);
+
+  useEffect(() => {
+    if (resendIn <= 0) return;
+    const timer = setTimeout(() => setResendIn((s) => s - 1), 1000);
+    return () => clearTimeout(timer);
+  }, [resendIn]);
 
   const sendOtp = () => {
     setLoading(true);
     setTimeout(() => {
       setOtpSent(true);
       setOtp('482910');
+      setResendIn(30);
       setLoading(false);
     }, 800);
+  };
+
+  const resendOtp = () => {
+    if (resendIn > 0) return;
+    setOtp('');
+    sendOtp();
   };
 
   const verifyOtp = () => {
@@ -38,20 +54,18 @@ export default function LoginScreen() {
       style={styles.container}
       footer={
         <LievButton
-          label={otpSent ? 'Verify OTP' : 'Get OTP'}
+          label={otpSent ? t(lang, 'verifyOtp') : t(lang, 'getOtp')}
           onPress={otpSent ? verifyOtp : sendOtp}
           loading={loading}
-          disabled={phone.length < 10 || (otpSent && otp.length < 6)}
+          disabled={phone.length < 10 || !consent || (otpSent && otp.length < 6)}
         />
       }>
       <Pressable onPress={() => router.back()} style={styles.back}>
         <Text style={styles.backText}>← Back</Text>
       </Pressable>
 
-      <Text style={styles.title}>Enter Mobile Number</Text>
-      <Text style={styles.subtitle}>
-        We'll send a 6-digit OTP to verify your number
-      </Text>
+      <Text style={styles.title}>{t(lang, 'loginTitle')}</Text>
+      <Text style={styles.subtitle}>{t(lang, 'loginSubtitle')}</Text>
 
       <View style={styles.phoneBox}>
         <Text style={styles.prefix}>+91</Text>
@@ -67,9 +81,18 @@ export default function LoginScreen() {
         />
       </View>
 
+      <Pressable style={styles.checkRow} onPress={() => setConsent((v) => !v)}>
+        <View style={[styles.checkbox, consent && styles.checkboxOn]}>
+          {consent ? <Text style={styles.checkMark}>✓</Text> : null}
+        </View>
+        <Text style={styles.checkText}>{t(lang, 'bureauConsent')}</Text>
+      </Pressable>
+
       {otpSent ? (
         <View style={styles.otpSection}>
-          <Text style={styles.otpLabel}>Enter OTP sent to +91 {phone}</Text>
+          <Text style={styles.otpLabel}>
+            {t(lang, 'otpSent')} {phone}
+          </Text>
           <View style={styles.otpBoxes}>
             {otp.padEnd(6, ' ').split('').map((digit, i) => (
               <View key={i} style={[styles.otpBox, digit.trim() && styles.otpBoxFilled]}>
@@ -85,16 +108,17 @@ export default function LoginScreen() {
             onChangeText={setOtp}
             autoFocus
           />
-          <Pressable>
-            <Text style={styles.resend}>Resend OTP in 00:28</Text>
+          <Pressable onPress={resendOtp} disabled={resendIn > 0}>
+            <Text style={[styles.resend, resendIn > 0 && styles.resendMuted]}>
+              {resendIn > 0
+                ? `${t(lang, 'resendOtp')} 00:${String(resendIn).padStart(2, '0')}`
+                : t(lang, 'resendNow')}
+            </Text>
           </Pressable>
         </View>
       ) : null}
 
-      <Text style={styles.consent}>
-        By continuing, you agree to Vaidik's Terms & Privacy Policy. We follow RBI
-        digital lending guidelines.
-      </Text>
+      <Text style={styles.consent}>{t(lang, 'loginConsent')}</Text>
     </LievScreen>
   );
 }
@@ -132,7 +156,7 @@ const styles = StyleSheet.create({
     borderColor: LievTheme.brand,
     paddingHorizontal: 16,
     paddingVertical: 4,
-    marginBottom: 24,
+    marginBottom: 16,
   },
   prefix: {
     fontSize: 18,
@@ -152,6 +176,37 @@ const styles = StyleSheet.create({
     color: LievTheme.text,
     paddingVertical: 14,
     letterSpacing: 1,
+  },
+  checkRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 10,
+    marginBottom: 20,
+  },
+  checkbox: {
+    width: 22,
+    height: 22,
+    borderRadius: 6,
+    borderWidth: 2,
+    borderColor: LievTheme.border,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 2,
+  },
+  checkboxOn: {
+    backgroundColor: LievTheme.brand,
+    borderColor: LievTheme.brand,
+  },
+  checkMark: {
+    color: LievTheme.primary,
+    fontWeight: '900',
+    fontSize: 14,
+  },
+  checkText: {
+    flex: 1,
+    fontSize: 12,
+    color: LievTheme.textMuted,
+    lineHeight: 18,
   },
   otpSection: {
     gap: 12,
@@ -197,6 +252,9 @@ const styles = StyleSheet.create({
     color: LievTheme.brandDark,
     fontWeight: '600',
     textAlign: 'center',
+  },
+  resendMuted: {
+    color: LievTheme.textMuted,
   },
   consent: {
     fontSize: 11,

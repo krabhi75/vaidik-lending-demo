@@ -17,7 +17,7 @@ const UPI_APPS = [
 ];
 
 export default function PayScreen() {
-  const { loan, emi, bank, markEmiPaid, payments } = useDemo();
+  const { loan, emi, bank, markEmiPaid, payments, nextEmiDue } = useDemo();
   const [method, setMethod] = useState<'upi' | 'nach'>('upi');
   const [selectedUpi, setSelectedUpi] = useState<string | null>(null);
   const [paid, setPaid] = useState(false);
@@ -28,8 +28,7 @@ export default function PayScreen() {
     const app = UPI_APPS.find((a) => a.id === selectedUpi);
     setLoading(true);
     setTimeout(() => {
-      markEmiPaid(app?.name ?? 'UPI');
-      const ref = `VAIDIKUPI${Date.now().toString().slice(-8)}`;
+      const ref = markEmiPaid(app?.name ?? 'UPI');
       setLastRef(ref);
       setPaid(true);
       setLoading(false);
@@ -51,12 +50,12 @@ export default function PayScreen() {
       title="Repay EMI"
       subtitle="Pay via UPI (instant) or rely on eNACH auto-debit on due date."
       footer={
-        !paid ? (
+        !paid && method === 'upi' ? (
           <LievButton
-            label={method === 'upi' ? 'Pay via UPI' : 'View NACH Status'}
-            onPress={method === 'upi' ? pay : () => {}}
+            label="Pay via UPI"
+            onPress={pay}
             loading={loading}
-            disabled={method === 'upi' && !selectedUpi}
+            disabled={!selectedUpi}
           />
         ) : undefined
       }>
@@ -118,7 +117,7 @@ export default function PayScreen() {
               <Row label="UMRN" value="HDFC0001234567890" />
               <Row label="Bank" value={`${bank?.bankName ?? 'HDFC'} •••• ${bank?.accountLast4 ?? '4521'}`} />
               <Row label="EMI Amount" value={formatINR(emi)} />
-              <Row label="Next Debit" value="17 Jul 2026" />
+              <Row label="Next Debit" value={nextEmiDue ? formatDate(nextEmiDue) : '—'} />
               <Text style={styles.nachNote}>
                 NPCI NACH will auto-debit on due date. UPI payment marks EMI as paid early.
               </Text>

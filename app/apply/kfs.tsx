@@ -8,7 +8,7 @@ import { LievScreen } from '@/components/liev/Screen';
 import { LievStatusBadge } from '@/components/liev/StatusBadge';
 import { LievCopy, LievTheme } from '@/constants/theme';
 import { DEMO_USER } from '@/lib/demo-data';
-import { formatINR } from '@/lib/format';
+import { formatINR, formatDate } from '@/lib/format';
 import { useDemo } from '@/context/DemoContext';
 
 export default function KfsScreen() {
@@ -72,7 +72,7 @@ export default function KfsScreen() {
         <Text style={styles.section}>Borrower Rights</Text>
         <Bullet text="3-day cooling-off period — cancel without penalty" />
         <Bullet text="Loan disbursed directly to your bank account" />
-        <Bullet text="Grievance: grievance@vaidikedu.com • 1800-VAIDIK-HELP" />
+        <Bullet text={`Grievance: ${LievCopy.grievanceEmail} • ${LievCopy.support}`} />
         <Bullet text="RBI Ombudsman applicable for unresolved complaints" />
       </LievCard>
 
@@ -90,7 +90,9 @@ export default function KfsScreen() {
         <LievCard highlight>
           <Text style={styles.signedIcon}>✍️</Text>
           <Text style={styles.signedTitle}>Aadhaar eSign Complete</Text>
-          <Text style={styles.signedRef}>Doc ID: VAIDIK-ESIGN-88421 • 17 Jun 2026</Text>
+          <Text style={styles.signedRef}>
+            Doc ID: VAIDIK-ESIGN-88421 • {formatDate(new Date().toISOString())}
+          </Text>
         </LievCard>
       )}
     </LievScreen>

@@ -2,8 +2,12 @@ import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 
 import { LievTheme } from '@/constants/theme';
+import { useDemo } from '@/context/DemoContext';
+import { t } from '@/lib/i18n';
 
 export default function TabLayout() {
+  const { lang } = useDemo();
+
   return (
     <Tabs
       screenOptions={{
@@ -25,7 +29,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: t(lang, 'tabHome'),
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
           ),
@@ -34,7 +38,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="loans"
         options={{
-          title: 'My Loans',
+          title: t(lang, 'tabLoans'),
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="document-text" size={size} color={color} />
           ),
@@ -43,7 +47,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="bnpl"
         options={{
-          title: 'BNPL',
+          title: t(lang, 'tabBnpl'),
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="pricetag" size={size} color={color} />
           ),
@@ -52,7 +56,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="pay"
         options={{
-          title: 'Pay',
+          title: t(lang, 'tabPay'),
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="wallet" size={size} color={color} />
           ),
@@ -61,7 +65,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          title: 'Account',
+          title: t(lang, 'tabAccount'),
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person-circle" size={size} color={color} />
           ),

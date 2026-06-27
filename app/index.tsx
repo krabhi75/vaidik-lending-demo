@@ -71,10 +71,10 @@ export default function WelcomeScreen() {
       <TrustBadges />
 
       <View style={styles.steps}>
-        <Text style={styles.stepsTitle}>How it works</Text>
-        <Step n="1" text="Register with mobile OTP" />
-        <Step n="2" text="KYC + Income (AA) verification" />
-        <Step n="3" text="KFS sign → eNACH → instant money" />
+        <Text style={styles.stepsTitle}>{t(lang, 'howItWorks')}</Text>
+        <Step n="1" text={t(lang, 'step1')} />
+        <Step n="2" text={t(lang, 'step2')} />
+        <Step n="3" text={t(lang, 'step3')} />
       </View>
 
       <View style={styles.actions}>

@@ -13,7 +13,7 @@ import { calculateEmi, formatINR } from '@/lib/format';
 import { useDemo } from '@/context/DemoContext';
 
 export default function ApplyLoanScreen() {
-  const { loan, updateLoan } = useDemo();
+  const { loan, updateLoan, resetApplicationState } = useDemo();
   const product = LOAN_PRODUCTS[0];
   const [amount, setAmount] = useState(loan.amount);
   const [tenure, setTenure] = useState(loan.tenure);
@@ -21,6 +21,7 @@ export default function ApplyLoanScreen() {
   const emi = calculateEmi(amount, product.rate, tenure);
 
   const submit = () => {
+    resetApplicationState();
     updateLoan({
       amount,
       tenure,

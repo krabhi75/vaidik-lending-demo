@@ -16,15 +16,35 @@ import { t } from '@/lib/i18n';
 import { useDemo } from '@/context/DemoContext';
 
 const SERVICES = [
-  { icon: 'cash-outline' as const, label: 'Get Loan', route: '/apply' },
-  { icon: 'card-outline' as const, label: 'Pay EMI', route: '/(tabs)/pay' },
-  { icon: 'time-outline' as const, label: 'History', route: '/(tabs)/loans' },
-  { icon: 'bag-handle-outline' as const, label: 'BNPL', route: '/(tabs)/bnpl' },
+  { icon: 'cash-outline' as const, labelKey: 'serviceGetLoan' as const, route: 'apply' },
+  { icon: 'card-outline' as const, labelKey: 'servicePayEmi' as const, route: '/(tabs)/pay' },
+  { icon: 'time-outline' as const, labelKey: 'serviceHistory' as const, route: '/(tabs)/loans' },
+  { icon: 'bag-handle-outline' as const, labelKey: 'serviceBnpl' as const, route: '/(tabs)/bnpl' },
 ];
 
 export default function HomeScreen() {
   const { loan, emi, nextEmiDue, kyc, outstandingBalance, lang, showPoMetrics } = useDemo();
   const kycComplete = Object.values(kyc).every(Boolean);
+
+  const navigateToApply = () => {
+    if (!kycComplete) {
+      router.push('/kyc/aadhaar');
+      return;
+    }
+    if (!loan.incomeVerified) {
+      router.push('/apply/income');
+      return;
+    }
+    router.push('/apply');
+  };
+
+  const navigateService = (route: string) => {
+    if (route === 'apply') {
+      navigateToApply();
+      return;
+    }
+    router.push(route as never);
+  };
 
   const trackerSteps = [
     { key: 'kyc', label: 'KYC', done: kycComplete, active: !kycComplete },
@@ -39,7 +59,7 @@ export default function HomeScreen() {
         <View style={styles.appBar}>
           <View style={styles.appBarBrand}>
             <Text style={styles.appBarTitle}>{LievCopy.companyName}</Text>
-            <Text style={styles.appBarCredit}>{LievCopy.designedBy}</Text>
+            <Text style={styles.appBarCredit}>{t(lang, 'greeting')}</Text>
           </View>
           <View style={styles.appBarRight}>
             <Pressable onPress={() => router.push('/notifications')}>
@@ -70,16 +90,12 @@ export default function HomeScreen() {
               <Text style={styles.cardSub}>Personal Loan • 10 min disbursal</Text>
               <Pressable
                 style={styles.cardCta}
-                onPress={() =>
-                  router.push(
-                    !kycComplete ? '/kyc/aadhaar' : !loan.incomeVerified ? '/apply/income' : '/apply',
-                  )
-                }>
+                onPress={navigateToApply}>
                 <Text style={styles.cardCtaText}>
                   {!kycComplete
                     ? t(lang, 'completeKyc')
                     : !loan.incomeVerified
-                      ? 'Verify Income'
+                      ? t(lang, 'verifyIncome')
                       : t(lang, 'applyNow')}
                 </Text>
               </Pressable>
@@ -89,11 +105,11 @@ export default function HomeScreen() {
 
         <View style={styles.services}>
           {SERVICES.map((s) => (
-            <Pressable key={s.label} style={styles.service} onPress={() => router.push(s.route as never)}>
+            <Pressable key={s.labelKey} style={styles.service} onPress={() => navigateService(s.route)}>
               <View style={styles.serviceIcon}>
                 <Ionicons name={s.icon} size={22} color={LievTheme.brandDark} />
               </View>
-              <Text style={styles.serviceLabel}>{s.label}</Text>
+              <Text style={styles.serviceLabel}>{t(lang, s.labelKey)}</Text>
             </Pressable>
           ))}
         </View>

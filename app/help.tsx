@@ -11,8 +11,8 @@ export default function HelpScreen() {
       <LievCard highlight>
         <Text style={styles.supportTitle}>Need help?</Text>
         <Text style={styles.supportSub}>Grievance Officer • Mon–Sat 9am–6pm</Text>
-        <Pressable onPress={() => Linking.openURL('mailto:grievance@vaidikedu.com')}>
-          <Text style={styles.link}>grievance@vaidikedu.com</Text>
+        <Pressable onPress={() => Linking.openURL(`mailto:${LievCopy.grievanceEmail}`)}>
+          <Text style={styles.link}>{LievCopy.grievanceEmail}</Text>
         </Pressable>
         <Text style={styles.phone}>{LievCopy.support}</Text>
       </LievCard>

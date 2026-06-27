@@ -74,9 +74,10 @@ type DemoContextValue = {
   emiSchedule: EmiScheduleItem[];
   payments: PaymentReceipt[];
   outstandingBalance: number;
-  markEmiPaid: (method: string) => void;
+  markEmiPaid: (method: string) => string;
   initScheduleOnDisburse: () => void;
   nextEmiDue: string | null;
+  resetApplicationState: () => void;
   resetDemo: () => void;
   loadPreset: (preset: DemoPreset) => void;
   phone: string;
@@ -218,30 +219,41 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
     setEmiSchedule(makeSchedule(loan.amount, loan.rate, loan.tenure));
   }, [loan.amount, loan.rate, loan.tenure]);
 
-  const markEmiPaid = (method: string) => {
-    setEmiSchedule((prev) => {
-      const dueIndex = prev.findIndex((s) => s.status === 'due');
-      if (dueIndex < 0) return prev;
-      const next = prev.map((item, i) => {
+  const markEmiPaid = useCallback((method: string): string => {
+    const dueIndex = emiSchedule.findIndex((s) => s.status === 'due');
+    if (dueIndex < 0) return '';
+
+    const paid = emiSchedule[dueIndex];
+    const methodCode = method.toUpperCase().replace(/\s+/g, '');
+    const ref = `VAIDIK${methodCode}${paid.installment}99001`;
+
+    setEmiSchedule((prev) =>
+      prev.map((item, i) => {
         if (i === dueIndex) return { ...item, status: 'paid' as const };
         if (i === dueIndex + 1) return { ...item, status: 'due' as const };
         return item;
-      });
-      const paid = prev[dueIndex];
-      setPayments((p) => [
-        {
-          id: `PAY-${Date.now()}`,
-          installment: paid.installment,
-          amount: paid.emi,
-          method,
-          date: new Date().toISOString(),
-          ref: `VAIDIK${method.toUpperCase()}${paid.installment}99001`,
-        },
-        ...p,
-      ]);
-      return next;
-    });
-  };
+      }),
+    );
+    setPayments((p) => [
+      {
+        id: `PAY-${Date.now()}`,
+        installment: paid.installment,
+        amount: paid.emi,
+        method,
+        date: new Date().toISOString(),
+        ref,
+      },
+      ...p,
+    ]);
+
+    return ref;
+  }, [emiSchedule]);
+
+  const resetApplicationState = useCallback(() => {
+    setEmiSchedule([]);
+    setPayments([]);
+    setBankState(null);
+  }, []);
 
   const resetAll = () => {
     setPhase('welcome');
@@ -398,6 +410,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
     markEmiPaid,
     initScheduleOnDisburse,
     nextEmiDue,
+    resetApplicationState,
     resetDemo,
     loadPreset,
     phone,

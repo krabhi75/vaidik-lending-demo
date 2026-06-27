@@ -4,12 +4,16 @@ import { LievCard } from '@/components/liev/Card';
 import { LievScreen } from '@/components/liev/Screen';
 import { LievStatusBadge } from '@/components/liev/StatusBadge';
 import { LievTheme } from '@/constants/theme';
-import { DEMO_NOTIFICATIONS } from '@/lib/demo-data';
+import { useDemo } from '@/context/DemoContext';
+import { buildDemoNotifications } from '@/lib/demo-data';
 
 export default function NotificationsScreen() {
+  const { emi, nextEmiDue, loan } = useDemo();
+  const notifications = buildDemoNotifications(emi, nextEmiDue, loan.disbursed);
+
   return (
     <LievScreen title="Notifications" subtitle="EMI reminders, disbursement alerts, and offers.">
-      {DEMO_NOTIFICATIONS.map((n) => (
+      {notifications.map((n) => (
         <LievCard key={n.id} style={!n.read ? styles.unread : undefined}>
           <View style={styles.row}>
             <Text style={styles.title}>{n.title}</Text>

@@ -49,20 +49,20 @@ export default function RootLayout() {
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="login" options={{ headerShown: false }} />
           <Stack.Screen name="demo/[preset]" options={{ headerShown: false }} />
-          <Stack.Screen name="kyc/aadhaar" options={{ title: 'Verify Identity' }} />
-          <Stack.Screen name="kyc/ckyc" options={{ title: 'CKYC' }} />
-          <Stack.Screen name="kyc/pan" options={{ title: 'PAN & Credit Score' }} />
-          <Stack.Screen name="kyc/video" options={{ title: 'Video KYC' }} />
-          <Stack.Screen name="apply/index" options={{ title: 'Get Personal Loan' }} />
-          <Stack.Screen name="apply/income" options={{ title: 'Income Verification' }} />
-          <Stack.Screen name="apply/approval" options={{ title: 'Credit Decision' }} />
-          <Stack.Screen name="apply/kfs" options={{ title: 'Key Fact Statement' }} />
-          <Stack.Screen name="apply/bank-link" options={{ title: 'Link Bank' }} />
-          <Stack.Screen name="apply/enach" options={{ title: 'Setup AutoPay' }} />
-          <Stack.Screen name="apply/disburse" options={{ title: 'Money Transferred' }} />
-          <Stack.Screen name="compliance" options={{ title: 'Regulatory Info' }} />
-          <Stack.Screen name="notifications" options={{ title: 'Notifications' }} />
-          <Stack.Screen name="help" options={{ title: 'Help & Support' }} />
+          <Stack.Screen name="kyc/aadhaar" options={{ headerShown: false }} />
+          <Stack.Screen name="kyc/ckyc" options={{ headerShown: false }} />
+          <Stack.Screen name="kyc/pan" options={{ headerShown: false }} />
+          <Stack.Screen name="kyc/video" options={{ headerShown: false }} />
+          <Stack.Screen name="apply/index" options={{ headerShown: false }} />
+          <Stack.Screen name="apply/income" options={{ headerShown: false }} />
+          <Stack.Screen name="apply/approval" options={{ headerShown: false }} />
+          <Stack.Screen name="apply/kfs" options={{ headerShown: false }} />
+          <Stack.Screen name="apply/bank-link" options={{ headerShown: false }} />
+          <Stack.Screen name="apply/enach" options={{ headerShown: false }} />
+          <Stack.Screen name="apply/disburse" options={{ headerShown: false }} />
+          <Stack.Screen name="compliance" options={{ headerShown: false }} />
+          <Stack.Screen name="notifications" options={{ headerShown: false }} />
+          <Stack.Screen name="help" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         </Stack>
       </MobileContainer>

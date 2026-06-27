@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { LievCard } from '@/components/liev/Card';
 import { LievScreen } from '@/components/liev/Screen';
-import { LievTheme } from '@/constants/theme';
+import { LievTheme, LievCopy } from '@/constants/theme';
 
 const COMPLIANCE_ITEMS = [
   {
@@ -66,7 +66,7 @@ export default function ComplianceScreen() {
       <LievCard>
         <Text style={styles.grievanceTitle}>Grievance Redressal</Text>
         <Text style={styles.grievance}>
-          Grievance Officer: grievance@vaidik.in{'\n'}
+          Grievance Officer: {LievCopy.grievanceEmail}{'\n'}
           RBI Ombudsman: https://cms.rbi.org.in{'\n'}
           Response SLA: 7 working days
         </Text>

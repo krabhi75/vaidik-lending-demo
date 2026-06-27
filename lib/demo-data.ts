@@ -1,4 +1,4 @@
-import { calculateEmi } from './format';
+import { calculateEmi, formatDate, formatINR } from './format';
 
 export const DEMO_USER = {
   name: 'Abhishek Kumar',
@@ -96,32 +96,45 @@ export const BANKS = [
   { id: 'axis', name: 'Axis Bank', icon: '🏦' },
 ];
 
-export const DEMO_NOTIFICATIONS = [
-  {
-    id: '1',
-    title: 'EMI due in 3 days',
-    body: '₹13,542 due on 17 Jul. Pay early to avoid late fee.',
-    time: '2h ago',
-    read: false,
-    type: 'reminder' as const,
-  },
-  {
-    id: '2',
-    title: 'Loan disbursed successfully',
-    body: '₹1,50,000 credited to HDFC •••• 4521. UTR: VAIDIKIMPS88421',
-    time: '1d ago',
-    read: true,
-    type: 'success' as const,
-  },
-  {
-    id: '3',
-    title: 'Pre-approved limit increased',
-    body: 'Your credit line is now ₹5,00,000 based on repayment behaviour.',
-    time: '3d ago',
-    read: true,
-    type: 'offer' as const,
-  },
-];
+export function buildDemoNotifications(
+  emi: number,
+  nextEmiDue: string | null,
+  loanDisbursed: boolean,
+) {
+  const dueLabel = nextEmiDue ? formatDate(nextEmiDue) : 'soon';
+  return [
+    {
+      id: '1',
+      title: 'EMI due in 3 days',
+      body: `${formatINR(emi)} due on ${dueLabel}. Pay early to avoid late fee.`,
+      time: '2h ago',
+      read: false,
+      type: 'reminder' as const,
+    },
+    ...(loanDisbursed
+      ? [
+          {
+            id: '2',
+            title: 'Loan disbursed successfully',
+            body: '₹1,50,000 credited to HDFC •••• 4521. UTR: VAIDIKIMPS88421',
+            time: '1d ago',
+            read: true,
+            type: 'success' as const,
+          },
+        ]
+      : []),
+    {
+      id: '3',
+      title: 'Pre-approved limit increased',
+      body: 'Your credit line is now ₹5,00,000 based on repayment behaviour.',
+      time: '3d ago',
+      read: true,
+      type: 'offer' as const,
+    },
+  ];
+}
+
+export const DEMO_NOTIFICATIONS = buildDemoNotifications(13542, null, true);
 
 export const HELP_FAQ = [
   {
