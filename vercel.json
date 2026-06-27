@@ -1,10 +1,17 @@
 {
   "buildCommand": "npx expo export --platform web",
   "outputDirectory": "dist",
+  "devCommand": "expo start --web",
+  "framework": null,
+  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/demo/:preset",
       "destination": "/demo/[preset]"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/"
     }
   ]
 }
