@@ -11,6 +11,9 @@ export default function Root({ children }: { children: ReactNode }) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
+        <meta name="theme-color" content="#242627" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" type="image/png" href="/favicon.ico" />
         <ScrollViewStyleReset />
         <style dangerouslySetInnerHTML={{ __html: mobileOnlyCss }} />
       </head>
