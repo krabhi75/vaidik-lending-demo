@@ -1,6 +1,7 @@
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
 import { LievTheme, MOBILE_WIDTH } from '@/constants/theme';
+import { XceloreTheme } from '@/constants/xcelore-theme';
 
 type Props = {
   children: React.ReactNode;
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
   },
   statusBar: {
     height: 28,
-    backgroundColor: LievTheme.primary,
+    backgroundColor: XceloreTheme.charcoal,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
