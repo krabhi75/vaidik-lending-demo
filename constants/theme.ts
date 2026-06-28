@@ -27,6 +27,11 @@ export const LievCopy = {
   support: '1800-VAIDIK-HELP',
   grievanceEmail: 'grievance@vaidik.in',
   playStore: '4.5★ • 10M+ downloads',
+  welcomeStats: [
+    { valueKey: 'welcomeStat1Value', labelKey: 'welcomeStat1Label' },
+    { valueKey: 'welcomeStat2Value', labelKey: 'welcomeStat2Label' },
+    { valueKey: 'welcomeStat3Value', labelKey: 'welcomeStat3Label' },
+  ] as const,
 };
 
 export const MOBILE_WIDTH = 390;

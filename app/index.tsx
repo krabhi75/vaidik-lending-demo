@@ -12,6 +12,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { XceloreBrandMark } from '@/components/liev/XceloreBrandMark';
+import { LievCopy } from '@/constants/theme';
 import { DemoPreset, useDemo } from '@/context/DemoContext';
 import { t } from '@/lib/i18n';
 import { XceloreCopy, XceloreTheme } from '@/constants/xcelore-theme';
@@ -75,10 +76,10 @@ export default function WelcomeScreen() {
           </View>
           <XceloreBrandMark />
           <View style={styles.statsRow}>
-            {XceloreCopy.stats.map((stat) => (
-              <View key={stat.label} style={styles.stat}>
-                <Text style={styles.statValue}>{stat.value}</Text>
-                <Text style={styles.statLabel}>{stat.label}</Text>
+            {LievCopy.welcomeStats.map((stat) => (
+              <View key={stat.labelKey} style={styles.stat}>
+                <Text style={styles.statValue}>{t(lang, stat.valueKey)}</Text>
+                <Text style={styles.statLabel}>{t(lang, stat.labelKey)}</Text>
               </View>
             ))}
           </View>

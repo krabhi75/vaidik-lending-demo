@@ -28,9 +28,4 @@ export const XceloreCopy = {
   interviewNote: 'PO Interview Demo',
   poweredBy: 'Powered by Xcelore',
   logoUri: 'https://xcelore.com/wp-content/uploads/2023/08/cropped-log-w.png',
-  stats: [
-    { value: '200+', label: 'Global Customers' },
-    { value: '300+', label: 'AI Projects' },
-    { value: '10+', label: 'Years Experience' },
-  ],
 };
