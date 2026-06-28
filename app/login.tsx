@@ -4,6 +4,7 @@ import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { LievButton } from '@/components/liev/Button';
 import { LievScreen } from '@/components/liev/Screen';
+import { XceloreBrandMark } from '@/components/liev/XceloreBrandMark';
 import { LievTheme } from '@/constants/theme';
 import { useDemo } from '@/context/DemoContext';
 import { t } from '@/lib/i18n';
@@ -117,6 +118,12 @@ export default function LoginScreen() {
           </Pressable>
         </View>
       ) : null}
+
+      <XceloreBrandMark
+        variant="poweredBy"
+        before={t(lang, 'poweredByBefore')}
+        after={t(lang, 'poweredByAfter')}
+      />
 
       <Text style={styles.consent}>{t(lang, 'loginConsent')}</Text>
     </LievScreen>

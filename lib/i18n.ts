@@ -40,6 +40,8 @@ const strings = {
     serviceHistory: 'History',
     serviceBnpl: 'BNPL',
     greeting: 'Welcome back',
+    poweredByBefore: 'Powered by ',
+    poweredByAfter: '',
   },
   hi: {
     welcomeTitle: 'पर्सनल लोन पाएं',
@@ -80,6 +82,8 @@ const strings = {
     serviceHistory: 'इतिहास',
     serviceBnpl: 'BNPL',
     greeting: 'वापसी पर स्वागत है',
+    poweredByBefore: '',
+    poweredByAfter: ' द्वारा संचालित',
   },
 } as const;
 

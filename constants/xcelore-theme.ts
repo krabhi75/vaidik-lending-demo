@@ -26,6 +26,7 @@ export const XceloreCopy = {
   prototypeSub: 'Product Owner demo • Fintech mobile app',
   builtBy: 'Built by Abhishek Kumar',
   interviewNote: 'PO Interview Demo',
+  poweredBy: 'Powered by Xcelore',
   logoUri: 'https://xcelore.com/wp-content/uploads/2023/08/cropped-log-w.png',
   stats: [
     { value: '200+', label: 'Global Customers' },

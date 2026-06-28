@@ -2,14 +2,16 @@ import { Image, StyleSheet, Text, View, ViewStyle } from 'react-native';
 
 import { XceloreCopy, XceloreTheme } from '@/constants/xcelore-theme';
 
-type Variant = 'hero' | 'footer' | 'compact';
+type Variant = 'hero' | 'footer' | 'compact' | 'poweredBy';
 
 type Props = {
   variant?: Variant;
   style?: ViewStyle;
+  before?: string;
+  after?: string;
 };
 
-export function XceloreBrandMark({ variant = 'hero', style }: Props) {
+export function XceloreBrandMark({ variant = 'hero', style, before, after }: Props) {
   if (variant === 'compact') {
     return (
       <View style={[styles.compact, style]}>
@@ -29,6 +31,20 @@ export function XceloreBrandMark({ variant = 'hero', style }: Props) {
         <Text style={styles.footerBuiltBy}>{XceloreCopy.builtBy}</Text>
         <Text style={styles.footerNote}>{XceloreCopy.interviewNote}</Text>
         <Text style={styles.footerLink}>xcelore.com</Text>
+      </View>
+    );
+  }
+
+  if (variant === 'poweredBy') {
+    const prefix = before ?? 'Powered by ';
+    const suffix = after ?? '';
+    return (
+      <View style={[styles.poweredBy, style]}>
+        <Text style={styles.poweredByText}>
+          {prefix}
+          <Text style={styles.poweredByBrand}>Xcelore</Text>
+          {suffix}
+        </Text>
       </View>
     );
   }
@@ -97,5 +113,19 @@ const styles = StyleSheet.create({
   compactLogo: {
     width: 100,
     height: 26,
+  },
+  poweredBy: {
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  poweredByText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: XceloreTheme.textMuted,
+    letterSpacing: 0.2,
+  },
+  poweredByBrand: {
+    color: XceloreTheme.primary,
+    fontWeight: '800',
   },
 });
